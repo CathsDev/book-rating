@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Book } from '../shared/book';
 import { BookComponent } from '../book/book.component';
@@ -10,8 +10,9 @@ import { BookComponent } from '../book/book.component';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   books: Book[];
+  sum = 0;
 
   constructor() {
     this.books = [
@@ -29,6 +30,18 @@ export class DashboardComponent {
         rating: 4,
         price: 39.5,
       },
+      {
+        isbn: '987654321',
+        title: 'Angular 3',
+        description: 'Fortgeschrittene Programmierung',
+        rating: 3,
+        price: 39.5,
+      },
     ];
+  }
+
+  ngOnInit(): void {
+    // Wann constructor, wann onInit?
+    this.sum = this.books.length;
   }
 }

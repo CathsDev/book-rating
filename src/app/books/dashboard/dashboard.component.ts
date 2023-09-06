@@ -10,7 +10,7 @@ import { Book } from '../shared/book';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-  books?: Book[];
+  books: Book[];
 
   constructor() {
     this.books = [

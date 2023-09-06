@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Book } from '../shared/book';
 
@@ -10,5 +10,6 @@ import { Book } from '../shared/book';
   styleUrls: ['./book.component.scss'],
 })
 export class BookComponent {
-  book?: Book;
+  // hier dürfen Daten von der Elternkomponente hineinfließen
+  @Input() book?: Book;
 }
